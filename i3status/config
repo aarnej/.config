@@ -11,11 +11,23 @@ general {
         interval = 5
 }
 
+order += "wireless wlan0"
+order += "ethernet enp0s20f0u2u1i5"
 order += "disk /"
 order += "load"
 order += "memory"
 order += "volume master"
 order += "tztime local"
+
+wireless wlan0 {
+        format_up = "%essid"
+        format_down = ""
+}
+
+ethernet enp0s20f0u2u1i5 {
+        format_up = "%speed"
+        format_down = ""
+}
 
 disk "/" {
         format = "%avail"
